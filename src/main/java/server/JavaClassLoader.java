@@ -1,6 +1,9 @@
 package server;
 
+import org.apache.log4j.Logger;
+
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.Constructor;
@@ -12,25 +15,37 @@ import java.util.concurrent.Callable;
 
 public class JavaClassLoader extends ClassLoader implements Callable<Object> {
     private String[] arguments;
+    private final static Logger logger = Logger.getLogger(Server.class);
 
     JavaClassLoader(String[] arguments) {
         this.arguments = arguments;
     }
 
     public Object call() {
-        return invokeClassMethod("plugins." + arguments[0].substring(1), "call", Arrays.copyOfRange(arguments, 1, arguments.length));
+        try {
+            return invokeClassMethod("plugins." + arguments[0].substring(1), "call", Arrays.copyOfRange(arguments, 1, arguments.length));
+        } catch (Exception e) {
+            logger.error(e);
+        }
+        return null;
     }
 
-    public static ArrayList<Class> getClasses(ClassLoader cl, String pack) throws Exception {
+    public static ArrayList<Class> getClasses(ClassLoader cl, String pack) {
         String dottedPackage = pack.replaceAll("[/]", ".");
         ArrayList<Class> classes = new ArrayList<>();
         URL upackage = cl.getResource(pack);
+        try {
         BufferedReader dis = new BufferedReader(new InputStreamReader((InputStream) upackage.getContent()));
         String line;
-        while ((line = dis.readLine()) != null) {
-            if (line.endsWith(".class")) {
-                classes.add(Class.forName(dottedPackage + "." + line.substring(0, line.lastIndexOf('.'))));
+            while ((line = dis.readLine()) != null) {
+                if (line.endsWith(".class")) {
+                    classes.add(Class.forName(dottedPackage + "." + line.substring(0, line.lastIndexOf('.'))));
+                }
             }
+        } catch (ClassNotFoundException e) {
+            logger.error(e);
+        } catch (IOException e) {
+            logger.error(e);
         }
         return classes;
     }
@@ -64,9 +79,9 @@ public class JavaClassLoader extends ClassLoader implements Callable<Object> {
             Method method = loadedMyClass.getMethod(methodName);
             return method.invoke(myClassObject);
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            logger.error(e);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error(e);
         }
         return null;
     }

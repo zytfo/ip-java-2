@@ -10,7 +10,7 @@ public class MessageReceiver implements Receiver {
 
     private final static Logger logger = Logger.getLogger(MessageReceiver.class);
     private MessageListener MessageListener;
-    private DataInputStream inputStream;
+    private final DataInputStream inputStream;
     private volatile boolean work;
 
     MessageReceiver(DataInputStream inputStream) {
@@ -28,7 +28,7 @@ public class MessageReceiver implements Receiver {
                     MessageListener.onNewMessage(message);
                 } catch (IOException e) {
                     logger.error("Connection is closed.", e);
-                    System.exit(0);
+                    stopReceiving();
                 }
             }
         };

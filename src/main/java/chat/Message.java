@@ -3,8 +3,8 @@ package chat;
 import java.io.DataOutputStream;
 
 public class Message {
-    private String text;
-    private DataOutputStream outputStream;
+    private final String text;
+    private final DataOutputStream outputStream;
 
     public Message(String text, DataOutputStream outputStream) {
         this.text = text;

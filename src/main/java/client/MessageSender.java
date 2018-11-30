@@ -11,7 +11,7 @@ public class MessageSender implements Sender {
     private final static Logger logger = Logger.getLogger(MessageSender.class);
     private final LinkedBlockingQueue<String> queue = new LinkedBlockingQueue<>();
     private volatile boolean work;
-    private DataOutputStream outputStream;
+    private final DataOutputStream outputStream;
 
     MessageSender(DataOutputStream outputStream) {
         this.outputStream = outputStream;

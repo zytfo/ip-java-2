@@ -9,7 +9,7 @@ import java.net.Socket;
 public class ConnectionHandler {
     private final static Logger logger = Logger.getLogger(ConnectionHandler.class);
     private ConnectionListener listener;
-    private ServerSocket serverSocket;
+    private final ServerSocket serverSocket;
     private volatile boolean accept = true;
 
     ConnectionHandler(ServerSocket serverSocket) {

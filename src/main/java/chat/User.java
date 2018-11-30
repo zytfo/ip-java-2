@@ -10,7 +10,7 @@ import java.net.Socket;
 public class User {
 
     private final static Logger logger = Logger.getLogger(User.class);
-    private Socket socket;
+    private final Socket socket;
     private String login;
     private int chatID = -1;
     private DataOutputStream outputStream;

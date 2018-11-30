@@ -5,8 +5,6 @@ import chat.Message;
 import chat.User;
 import org.apache.log4j.Logger;
 
-import java.io.IOException;
-import java.net.ServerSocket;
 import java.util.HashMap;
 
 
@@ -14,9 +12,9 @@ public class Server {
 
     private final static Logger logger = Logger.getLogger(Server.class);
     private HashMap<Integer, Chat> chats = new HashMap<>();
-    private MessageQueue messageQueue;
-    private ConnectionHandler connectionHandler;
-    private MessageHandler messageHandler;
+    private final MessageQueue messageQueue;
+    private final ConnectionHandler connectionHandler;
+    private final MessageHandler messageHandler;
 
     private volatile int userCounter = 0;
     private volatile int chatCounter = 0;

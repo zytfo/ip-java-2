@@ -18,7 +18,7 @@ public class MessageListener {
     private MessageQueue messageQueue;
     private HashMap<Integer, Chat> chats;
     private ArrayList<String> customCommands = new ArrayList<>();
-    private ExecutorService pool = Executors.newFixedThreadPool(1);
+    private final ExecutorService pool = Executors.newFixedThreadPool(1);
     private ArrayList<Class> classes;
 
     MessageListener(MessageQueue messageQueue, HashMap<Integer, Chat> chats) {
