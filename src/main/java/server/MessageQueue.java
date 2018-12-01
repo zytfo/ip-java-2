@@ -26,13 +26,9 @@ public class MessageQueue {
         messageQueueWorker.start();
     }
 
-    public void stopSending() {
+    private void stopSending() {
         work = false;
         queue.clear();
-    }
-
-    public void clear() {
-        stopSending();
         try {
             outputStream.close();
         } catch (IOException e) {

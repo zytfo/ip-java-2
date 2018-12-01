@@ -51,6 +51,7 @@ public class User {
             try {
                 inputStream = new DataInputStream(socket.getInputStream());
             } catch (IOException e) {
+                logger.error(e);
                 return null;
             }
         }
@@ -62,7 +63,7 @@ public class User {
             try {
                 outputStream = new DataOutputStream(socket.getOutputStream());
             } catch (IOException e) {
-                e.printStackTrace();
+                logger.error(e);
                 return null;
             }
         }

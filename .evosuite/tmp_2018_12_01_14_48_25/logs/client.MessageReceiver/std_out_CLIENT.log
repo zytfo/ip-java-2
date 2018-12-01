@@ -1,0 +1,81 @@
+* Starting client
+* Connecting to master process on port 9641
+* Analyzing classpath: 
+  - /Users/zytfo/Desktop/University/IP-Java/hw2/target/test-classes
+  - /Users/zytfo/Desktop/University/IP-Java/hw2/target/classes
+  - /Users/zytfo/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar
+  - /Users/zytfo/.m2/repository/junit/junit/4.12/junit-4.12.jar
+  - /Users/zytfo/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+  - /Users/zytfo/.m2/repository/org/mockito/mockito-all/1.9.5/mockito-all-1.9.5.jar
+* Finished analyzing classpath
+* Generating tests for class client.MessageReceiver
+* Test criteria:
+  - Line Coverage
+  - Branch Coverage
+  - Exception
+  - Mutation testing (weak)
+  - Method-Output Coverage
+  - Top-Level Method Coverage
+  - No-Exception Top-Level Method Coverage
+  - Context Branch Coverage
+* Setting up search algorithm for whole suite generation
+[MASTER] 14:53:52.642 [pool-2-thread-1] WARN  TestSuiteSerialization - Cannot load tests because file does not exist: /Users/zytfo/Desktop/University/IP-Java/hw2/.evosuite/evosuite-seeds/client.MessageReceiver.seed
+* Loaded 0 tests from /Users/zytfo/Desktop/University/IP-Java/hw2/.evosuite/evosuite-seeds/client.MessageReceiver.seed
+* Total number of test goals: 
+  - Line 23
+  - Branch 7
+  - Exception 0
+  - MutationFactory 5
+  - Output 0
+  - Method 6
+  - MethodNoException 6
+  - CBranchFitnessFactory 7
+* Using seed 1543665217084
+* Starting evolution
+[MASTER] 14:53:53.091 [pool-2-thread-1] WARN  TimeController - Phase INITIALIZATION lasted too long, 9 seconds more than allowed.
+* Search finished after 43s and 0 generations, 789 statements, best individual has fitness: 8.333333333333334
+* Writing sequences to pool
+[MASTER] 14:54:36.079 [pool-2-thread-1] WARN  TimeController - Phase SEARCH lasted too long, 5 seconds more than allowed.
+* Minimizing test suite
+* Going to analyze the coverage criteria
+* Coverage analysis for criterion LINE
+* Coverage of criterion LINE: 78%
+* Total number of goals: 23
+* Number of covered goals: 18
+* Coverage analysis for criterion BRANCH
+* Coverage of criterion BRANCH: 86%
+* Total number of goals: 7
+* Number of covered goals: 6
+* Coverage analysis for criterion EXCEPTION
+* Coverage of criterion EXCEPTION: 100%
+* Total number of goals: 1
+* Number of covered goals: 1
+* Coverage analysis for criterion WEAKMUTATION
+* Coverage of criterion WEAKMUTATION: 80%
+* Total number of goals: 5
+* Number of covered goals: 4
+* Coverage analysis for criterion OUTPUT
+* Coverage of criterion OUTPUT: 100% (no goals)
+* Coverage analysis for criterion METHOD
+* Coverage of criterion METHOD: 83%
+* Total number of goals: 6
+* Number of covered goals: 5
+* Coverage analysis for criterion METHODNOEXCEPTION
+* Coverage of criterion METHODNOEXCEPTION: 83%
+* Total number of goals: 6
+* Number of covered goals: 5
+* Coverage analysis for criterion CBRANCH
+* Coverage of criterion CBRANCH: 86%
+* Total number of goals: 7
+* Number of covered goals: 6
+* Generated 4 tests with total length 18
+* Resulting test suite's coverage: 87% (average coverage for all fitness functions)
+* Generating assertions
+* Resulting test suite's mutation score: 20%
+* Compiling and checking tests
+[MASTER] 14:54:48.110 [pool-2-thread-1] WARN  TestSuiteGenerator - JUnit checking timed out
+[MASTER] 14:54:48.165 [pool-2-thread-1] WARN  TimeController - Phase JUNIT_CHECK lasted too long, 0 seconds more than allowed.
+[MASTER] 14:54:48.166 [pool-2-thread-1] WARN  TimeController - Current phase WRITING_TESTS could run up to 6s, but only 2s are left
+* Writing JUnit test case 'MessageReceiver_ESTest' to /Users/zytfo/Desktop/University/IP-Java/hw2/.evosuite/tmp_2018_12_01_14_48_25/tests
+* Done!
+

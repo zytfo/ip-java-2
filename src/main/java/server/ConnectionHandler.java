@@ -38,12 +38,12 @@ public class ConnectionHandler {
                     listener.addConnection(socket);
                 } catch (IOException e) {
                     logger.error(e);
-                    stopAcepting();
+                    stopAccepting();
                 }
             }
         }
 
-        private void stopAcepting() {
+        private void stopAccepting() {
             work = false;
             try {
                 serverSocket.close();
