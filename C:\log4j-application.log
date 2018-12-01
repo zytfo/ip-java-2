@@ -1373,3 +1373,28 @@ java.net.ConnectException: Connection refused (Connection refused)
 	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
 2018-12-01 14:24:20 ERROR Server:48 - java.lang.NullPointerException
 2018-12-01 14:24:20 INFO  MessageListener:110 - null says: text
+2018-12-01 17:39:14 INFO  ConnectionHandler:37 - Accepted connection from Socket[addr=/127.0.0.1,port=59581,localport=9000]
+2018-12-01 17:39:14 INFO  Server:38 - -------- New connection --------
+2018-12-01 17:39:14 INFO  MessageQueue:47 - New message from client side: Commands:
+/select <chatID>: select one of the chats
+/chats: get list of possible chats
+/custom: get list of custom commands
+/disconnect: disconnect
+2018-12-01 17:39:14 INFO  MessageHandler:37 - Message handler started getting messages from User 1
+
+2018-12-01 17:39:25 INFO  MessageListener:110 - User 1 says: :Factorial 3
+2018-12-01 17:39:25 INFO  MessageQueue:47 - New message from client side: 6
+2018-12-01 17:39:33 ERROR MessageSender:59 - java.net.SocketException: Socket closed
+2018-12-01 17:39:33 ERROR MessageHandler:47 - Connection with User 1 is closed.
+
+2018-12-01 17:39:33 ERROR MessageReceiver:49 - Connection is closed. Press any key to exit.
+java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.net.SocketInputStream.read(SocketInputStream.java:224)
+	at java.io.DataInputStream.readUnsignedShort(DataInputStream.java:337)
+	at java.io.DataInputStream.readUTF(DataInputStream.java:589)
+	at java.io.DataInputStream.readUTF(DataInputStream.java:564)
+	at client.MessageReceiver$MessageReceiverWorker.run(MessageReceiver.java:46)
