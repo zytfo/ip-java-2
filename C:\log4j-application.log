@@ -231,3 +231,481 @@ java.net.SocketException: Socket closed
 	at java.io.DataInputStream.readUTF(DataInputStream.java:564)
 	at client.MessageReceiver.lambda$startReceiving$0(MessageReceiver.java:27)
 	at java.lang.Thread.run(Thread.java:748)
+2018-11-30 20:23:00 INFO  ConnectionHandler:28 - Accepted connection from Socket[addr=/127.0.0.1,port=55532,localport=9000]
+2018-11-30 20:23:00 INFO  Server:39 - -------- New connection --------
+2018-11-30 20:23:00 INFO  MessageQueue:31 - New message from client side: Commands:
+/select <chatID>: select one of the chats
+/chats: get list of possible chats
+/custom: get list of custom commands
+/disconnect: disconnect
+2018-11-30 20:23:00 INFO  MessageHandler:22 - Message handler started getting messages from User 1
+
+2018-11-30 20:23:00 ERROR MessageHandler:32 - Connection with User 1 is closed.
+
+2018-11-30 20:23:00 ERROR MessageReceiver:31 - Connection is closed.
+java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.net.SocketInputStream.read(SocketInputStream.java:224)
+	at java.io.DataInputStream.readUnsignedShort(DataInputStream.java:337)
+	at java.io.DataInputStream.readUTF(DataInputStream.java:589)
+	at java.io.DataInputStream.readUTF(DataInputStream.java:564)
+	at client.MessageReceiver.lambda$startReceiving$0(MessageReceiver.java:28)
+	at java.lang.Thread.run(Thread.java:748)
+2018-11-30 20:23:46 INFO  ConnectionHandler:28 - Accepted connection from Socket[addr=/127.0.0.1,port=55548,localport=9000]
+2018-11-30 20:23:46 INFO  Server:39 - -------- New connection --------
+2018-11-30 20:23:46 INFO  MessageQueue:31 - New message from client side: Commands:
+/select <chatID>: select one of the chats
+/chats: get list of possible chats
+/custom: get list of custom commands
+/disconnect: disconnect
+2018-11-30 20:23:46 INFO  MessageHandler:22 - Message handler started getting messages from User 1
+
+2018-11-30 20:23:46 ERROR MessageHandler:32 - Connection with User 1 is closed.
+
+2018-11-30 20:23:46 ERROR MessageReceiver:30 - Connection is closed.
+java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.net.SocketInputStream.read(SocketInputStream.java:224)
+	at java.io.DataInputStream.readUnsignedShort(DataInputStream.java:337)
+	at java.io.DataInputStream.readUTF(DataInputStream.java:589)
+	at java.io.DataInputStream.readUTF(DataInputStream.java:564)
+	at client.MessageReceiver.lambda$startReceiving$0(MessageReceiver.java:27)
+	at java.lang.Thread.run(Thread.java:748)
+2018-11-30 20:24:17 INFO  ConnectionHandler:28 - Accepted connection from Socket[addr=/127.0.0.1,port=55557,localport=9000]
+2018-11-30 20:24:17 INFO  Server:39 - -------- New connection --------
+2018-11-30 20:24:17 INFO  MessageQueue:31 - New message from client side: Commands:
+/select <chatID>: select one of the chats
+/chats: get list of possible chats
+/custom: get list of custom commands
+/disconnect: disconnect
+2018-11-30 20:24:17 INFO  MessageHandler:22 - Message handler started getting messages from User 1
+
+2018-11-30 20:24:17 ERROR MessageHandler:32 - Connection with User 1 is closed.
+
+2018-11-30 20:24:17 ERROR MessageReceiver:30 - Connection is closed.
+java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.net.SocketInputStream.read(SocketInputStream.java:224)
+	at java.io.DataInputStream.readUnsignedShort(DataInputStream.java:337)
+	at java.io.DataInputStream.readUTF(DataInputStream.java:589)
+	at java.io.DataInputStream.readUTF(DataInputStream.java:564)
+	at client.MessageReceiver.lambda$startReceiving$0(MessageReceiver.java:27)
+	at java.lang.Thread.run(Thread.java:748)
+2018-11-30 20:31:02 INFO  ConnectionHandler:28 - Accepted connection from Socket[addr=/127.0.0.1,port=55591,localport=9000]
+2018-11-30 20:31:02 INFO  Server:39 - -------- New connection --------
+2018-11-30 20:31:02 INFO  MessageQueue:31 - New message from client side: Commands:
+/select <chatID>: select one of the chats
+/chats: get list of possible chats
+/custom: get list of custom commands
+/disconnect: disconnect
+2018-11-30 20:31:02 INFO  MessageHandler:22 - Message handler started getting messages from User 1
+
+2018-11-30 20:31:02 ERROR MessageHandler:32 - Connection with User 1 is closed.
+
+2018-11-30 20:31:14 INFO  ConnectionHandler:28 - Accepted connection from Socket[addr=/127.0.0.1,port=55596,localport=9000]
+2018-11-30 20:31:14 INFO  Server:39 - -------- New connection --------
+2018-11-30 20:31:14 INFO  MessageQueue:31 - New message from client side: Commands:
+/select <chatID>: select one of the chats
+/chats: get list of possible chats
+/custom: get list of custom commands
+/disconnect: disconnect
+2018-11-30 20:31:14 INFO  MessageHandler:22 - Message handler started getting messages from User 2
+
+2018-11-30 20:31:14 ERROR MessageHandler:32 - Connection with User 2 is closed.
+
+2018-11-30 20:32:59 INFO  ConnectionHandler:28 - Accepted connection from Socket[addr=/127.0.0.1,port=55611,localport=9000]
+2018-11-30 20:32:59 INFO  Server:39 - -------- New connection --------
+2018-11-30 20:32:59 INFO  MessageQueue:31 - New message from client side: Commands:
+/select <chatID>: select one of the chats
+/chats: get list of possible chats
+/custom: get list of custom commands
+/disconnect: disconnect
+2018-11-30 20:32:59 INFO  MessageHandler:22 - Message handler started getting messages from User 1
+
+2018-11-30 20:32:59 ERROR MessageHandler:32 - Connection with User 1 is closed.
+
+2018-11-30 20:33:42 INFO  ConnectionHandler:28 - Accepted connection from Socket[addr=/127.0.0.1,port=55624,localport=9000]
+2018-11-30 20:33:42 INFO  Server:39 - -------- New connection --------
+2018-11-30 20:33:42 INFO  MessageQueue:31 - New message from client side: Commands:
+/select <chatID>: select one of the chats
+/chats: get list of possible chats
+/custom: get list of custom commands
+/disconnect: disconnect
+2018-11-30 20:33:42 INFO  MessageHandler:22 - Message handler started getting messages from User 1
+
+2018-11-30 20:33:42 ERROR MessageHandler:32 - Connection with User 1 is closed.
+
+2018-11-30 20:33:44 INFO  ConnectionHandler:28 - Accepted connection from Socket[addr=/127.0.0.1,port=55628,localport=9000]
+2018-11-30 20:33:44 INFO  Server:39 - -------- New connection --------
+2018-11-30 20:33:44 INFO  MessageQueue:31 - New message from client side: Commands:
+/select <chatID>: select one of the chats
+/chats: get list of possible chats
+/custom: get list of custom commands
+/disconnect: disconnect
+2018-11-30 20:33:44 INFO  MessageHandler:22 - Message handler started getting messages from User 2
+
+2018-11-30 20:33:45 ERROR MessageHandler:32 - Connection with User 2 is closed.
+
+2018-11-30 20:33:51 ERROR MessageSender:39 - java.net.SocketException: Socket closed
+2018-11-30 20:34:49 INFO  ConnectionHandler:28 - Accepted connection from Socket[addr=/127.0.0.1,port=55638,localport=9000]
+2018-11-30 20:34:49 INFO  Server:39 - -------- New connection --------
+2018-11-30 20:34:49 INFO  MessageQueue:31 - New message from client side: Commands:
+/select <chatID>: select one of the chats
+/chats: get list of possible chats
+/custom: get list of custom commands
+/disconnect: disconnect
+2018-11-30 20:34:49 INFO  MessageHandler:22 - Message handler started getting messages from User 1
+
+2018-11-30 20:34:49 ERROR MessageHandler:32 - Connection with User 1 is closed.
+
+2018-11-30 20:34:49 ERROR MessageReceiver:31 - Connection is closed.
+java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.net.SocketInputStream.read(SocketInputStream.java:224)
+	at java.io.DataInputStream.readUnsignedShort(DataInputStream.java:337)
+	at java.io.DataInputStream.readUTF(DataInputStream.java:589)
+	at java.io.DataInputStream.readUTF(DataInputStream.java:564)
+	at client.MessageReceiver.lambda$startReceiving$0(MessageReceiver.java:28)
+	at java.lang.Thread.run(Thread.java:748)
+2018-11-30 20:35:35 INFO  ConnectionHandler:28 - Accepted connection from Socket[addr=/127.0.0.1,port=55648,localport=9000]
+2018-11-30 20:35:35 INFO  Server:39 - -------- New connection --------
+2018-11-30 20:35:35 INFO  MessageQueue:31 - New message from client side: Commands:
+/select <chatID>: select one of the chats
+/chats: get list of possible chats
+/custom: get list of custom commands
+/disconnect: disconnect
+2018-11-30 20:35:35 INFO  MessageHandler:22 - Message handler started getting messages from User 1
+
+2018-11-30 20:35:41 INFO  MessageListener:107 - User 1 says: /select 1
+2018-11-30 20:35:41 INFO  MessageQueue:31 - New message from client side: User 1 has connected.
+2018-11-30 20:35:46 ERROR MessageSender:39 - java.net.SocketException: Socket closed
+2018-11-30 20:35:54 INFO  ConnectionHandler:28 - Accepted connection from Socket[addr=/127.0.0.1,port=55654,localport=9000]
+2018-11-30 20:35:54 INFO  Server:39 - -------- New connection --------
+2018-11-30 20:35:54 INFO  MessageQueue:31 - New message from client side: Commands:
+/select <chatID>: select one of the chats
+/chats: get list of possible chats
+/custom: get list of custom commands
+/disconnect: disconnect
+2018-11-30 20:35:54 INFO  MessageHandler:22 - Message handler started getting messages from User 2
+
+2018-11-30 20:35:57 INFO  MessageListener:107 - User 2 says: /select 1
+2018-11-30 20:35:57 INFO  MessageQueue:31 - New message from client side: User 2 has connected.
+2018-11-30 20:35:57 INFO  MessageQueue:31 - New message from client side: User 2 has connected.
+2018-11-30 20:37:29 INFO  ConnectionHandler:28 - Accepted connection from Socket[addr=/127.0.0.1,port=55665,localport=9000]
+2018-11-30 20:37:29 INFO  Server:39 - -------- New connection --------
+2018-11-30 20:37:29 INFO  MessageQueue:31 - New message from client side: Commands:
+/select <chatID>: select one of the chats
+/chats: get list of possible chats
+/custom: get list of custom commands
+/disconnect: disconnect
+2018-11-30 20:37:29 INFO  MessageHandler:22 - Message handler started getting messages from User 1
+
+2018-11-30 20:37:37 INFO  MessageListener:107 - User 1 says: :Factorial 3
+2018-11-30 20:37:37 INFO  MessageQueue:31 - New message from client side: 6
+2018-11-30 20:38:40 INFO  ConnectionHandler:28 - Accepted connection from Socket[addr=/127.0.0.1,port=55676,localport=9000]
+2018-11-30 20:38:40 INFO  Server:39 - -------- New connection --------
+2018-11-30 20:38:40 INFO  MessageQueue:31 - New message from client side: Commands:
+/select <chatID>: select one of the chats
+/chats: get list of possible chats
+/custom: get list of custom commands
+/disconnect: disconnect
+2018-11-30 20:38:40 INFO  MessageHandler:22 - Message handler started getting messages from User 1
+
+2018-11-30 20:38:44 INFO  MessageListener:107 - User 1 says: /select 1
+2018-11-30 20:38:44 INFO  MessageQueue:31 - New message from client side: User 1 has connected.
+2018-11-30 20:38:48 INFO  ConnectionHandler:28 - Accepted connection from Socket[addr=/127.0.0.1,port=55681,localport=9000]
+2018-11-30 20:38:48 INFO  Server:39 - -------- New connection --------
+2018-11-30 20:38:48 INFO  MessageQueue:31 - New message from client side: Commands:
+/select <chatID>: select one of the chats
+/chats: get list of possible chats
+/custom: get list of custom commands
+/disconnect: disconnect
+2018-11-30 20:38:48 INFO  MessageHandler:22 - Message handler started getting messages from User 2
+
+2018-11-30 20:38:50 INFO  MessageListener:107 - User 2 says: /select
+2018-11-30 20:38:50 INFO  MessageQueue:31 - New message from client side: No such command
+
+2018-11-30 20:38:50 INFO  MessageQueue:31 - New message from client side: Commands:
+/select <chatID>: select one of the chats
+/chats: get list of possible chats
+/custom: get list of custom commands
+/disconnect: disconnect
+2018-11-30 20:38:54 INFO  MessageListener:107 - User 2 says: /select 1
+2018-11-30 20:38:54 INFO  MessageQueue:31 - New message from client side: User 2 has connected.
+2018-11-30 20:38:54 INFO  MessageQueue:31 - New message from client side: User 2 has connected.
+2018-11-30 20:38:55 INFO  MessageListener:107 - User 2 says: sadasd
+2018-11-30 20:38:55 INFO  MessageQueue:31 - New message from client side: User 2: sadasd
+2018-11-30 20:38:57 INFO  MessageListener:107 - User 1 says: asdasd
+2018-11-30 20:38:57 INFO  MessageQueue:31 - New message from client side: User 1: asdasd
+2018-11-30 20:38:58 INFO  MessageListener:107 - User 2 says: asdasd
+2018-11-30 20:38:58 INFO  MessageQueue:31 - New message from client side: User 2: asdasd
+2018-11-30 20:39:08 INFO  MessageListener:107 - User 1 says: :Factorial 4
+2018-11-30 20:39:08 INFO  MessageQueue:31 - New message from client side: 24
+2018-11-30 20:39:15 ERROR MessageHandler:32 - Connection with User 1 is closed.
+
+2018-11-30 20:39:20 ERROR MessageHandler:32 - Connection with User 2 is closed.
+
+2018-11-30 20:41:43 INFO  ConnectionHandler:28 - Accepted connection from Socket[addr=/127.0.0.1,port=55700,localport=9000]
+2018-11-30 20:41:43 INFO  Server:39 - -------- New connection --------
+2018-11-30 20:41:43 INFO  MessageQueue:31 - New message from client side: Commands:
+/select <chatID>: select one of the chats
+/chats: get list of possible chats
+/custom: get list of custom commands
+/disconnect: disconnect
+2018-11-30 20:41:43 INFO  MessageHandler:22 - Message handler started getting messages from User 1
+
+2018-11-30 20:41:47 INFO  MessageListener:107 - User 1 says: /select 1
+2018-11-30 20:41:47 INFO  MessageQueue:31 - New message from client side: User 1 has connected.
+2018-11-30 20:41:50 ERROR MessageHandler:32 - Connection with User 1 is closed.
+
+2018-11-30 20:41:50 ERROR MessageSender:39 - java.net.SocketException: Socket closed
+2018-11-30 20:41:50 ERROR MessageReceiver:31 - Connection is closed.
+java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.net.SocketInputStream.read(SocketInputStream.java:224)
+	at java.io.DataInputStream.readUnsignedShort(DataInputStream.java:337)
+	at java.io.DataInputStream.readUTF(DataInputStream.java:589)
+	at java.io.DataInputStream.readUTF(DataInputStream.java:564)
+	at client.MessageReceiver.lambda$startReceiving$0(MessageReceiver.java:28)
+	at java.lang.Thread.run(Thread.java:748)
+2018-11-30 20:48:16 INFO  ConnectionHandler:28 - Accepted connection from Socket[addr=/127.0.0.1,port=55819,localport=9000]
+2018-11-30 20:48:16 INFO  Server:39 - -------- New connection --------
+2018-11-30 20:48:16 INFO  MessageQueue:31 - New message from client side: Commands:
+/select <chatID>: select one of the chats
+/chats: get list of possible chats
+/custom: get list of custom commands
+/disconnect: disconnect
+2018-11-30 20:48:16 INFO  MessageHandler:22 - Message handler started getting messages from User 1
+
+2018-11-30 20:48:19 INFO  ConnectionHandler:28 - Accepted connection from Socket[addr=/127.0.0.1,port=55823,localport=9000]
+2018-11-30 20:48:19 INFO  Server:39 - -------- New connection --------
+2018-11-30 20:48:19 INFO  MessageQueue:31 - New message from client side: Commands:
+/select <chatID>: select one of the chats
+/chats: get list of possible chats
+/custom: get list of custom commands
+/disconnect: disconnect
+2018-11-30 20:48:19 INFO  MessageHandler:22 - Message handler started getting messages from User 2
+
+2018-11-30 20:48:26 INFO  MessageListener:107 - User 1 says: /select 1
+2018-11-30 20:48:26 INFO  MessageQueue:31 - New message from client side: User 1 has connected.
+2018-11-30 20:48:30 INFO  MessageListener:107 - User 2 says: /select 1
+2018-11-30 20:48:30 INFO  MessageQueue:31 - New message from client side: User 2 has connected.
+2018-11-30 20:48:30 INFO  MessageQueue:31 - New message from client side: User 2 has connected.
+2018-11-30 20:48:32 INFO  MessageListener:107 - User 2 says: hey
+2018-11-30 20:48:32 INFO  MessageQueue:31 - New message from client side: User 2: hey
+2018-11-30 20:48:34 INFO  MessageListener:107 - User 1 says: hello
+2018-11-30 20:48:34 INFO  MessageQueue:31 - New message from client side: User 1: hello
+2018-11-30 20:48:36 INFO  MessageListener:107 - User 2 says: yeah
+2018-11-30 20:48:36 INFO  MessageQueue:31 - New message from client side: User 2: yeah
+2018-11-30 20:48:38 INFO  MessageListener:107 - User 1 says: ok
+2018-11-30 20:48:38 INFO  MessageQueue:31 - New message from client side: User 1: ok
+2018-11-30 20:48:40 INFO  MessageListener:107 - User 2 says: why
+2018-11-30 20:48:40 INFO  MessageQueue:31 - New message from client side: User 2: why
+2018-11-30 20:48:44 INFO  MessageListener:107 - User 1 says: no]
+2018-11-30 20:48:44 INFO  MessageQueue:31 - New message from client side: User 1: no]
+2018-11-30 20:48:50 INFO  MessageListener:107 - User 2 says: :Factorial 4
+2018-11-30 20:48:50 INFO  MessageQueue:31 - New message from client side: 24
+2018-11-30 20:48:56 INFO  MessageListener:107 - User 1 says: :Factorial 5
+2018-11-30 20:48:56 INFO  MessageQueue:31 - New message from client side: 120
+2018-11-30 20:49:03 ERROR MessageHandler:32 - Connection with User 1 is closed.
+
+2018-11-30 20:49:03 ERROR MessageSender:39 - java.net.SocketException: Socket closed
+2018-11-30 20:49:03 ERROR MessageReceiver:30 - Connection is closed.
+java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.net.SocketInputStream.read(SocketInputStream.java:224)
+	at java.io.DataInputStream.readUnsignedShort(DataInputStream.java:337)
+	at java.io.DataInputStream.readUTF(DataInputStream.java:589)
+	at java.io.DataInputStream.readUTF(DataInputStream.java:564)
+	at client.MessageReceiver.lambda$startReceiving$0(MessageReceiver.java:27)
+	at java.lang.Thread.run(Thread.java:748)
+2018-11-30 20:49:09 ERROR MessageHandler:32 - Connection with User 2 is closed.
+
+2018-11-30 20:49:09 ERROR MessageSender:39 - java.net.SocketException: Socket closed
+2018-11-30 20:49:09 ERROR MessageReceiver:30 - Connection is closed.
+java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.net.SocketInputStream.read(SocketInputStream.java:224)
+	at java.io.DataInputStream.readUnsignedShort(DataInputStream.java:337)
+	at java.io.DataInputStream.readUTF(DataInputStream.java:589)
+	at java.io.DataInputStream.readUTF(DataInputStream.java:564)
+	at client.MessageReceiver.lambda$startReceiving$0(MessageReceiver.java:27)
+	at java.lang.Thread.run(Thread.java:748)
+2018-11-30 20:54:39 INFO  ConnectionHandler:28 - Accepted connection from Socket[addr=/127.0.0.1,port=55872,localport=9000]
+2018-11-30 20:54:39 INFO  Server:39 - -------- New connection --------
+2018-11-30 20:54:39 INFO  MessageQueue:31 - New message from client side: Commands:
+/select <chatID>: select one of the chats
+/chats: get list of possible chats
+/custom: get list of custom commands
+/disconnect: disconnect
+2018-11-30 20:54:39 INFO  MessageHandler:22 - Message handler started getting messages from User 1
+
+2018-11-30 20:54:45 INFO  MessageListener:107 - User 1 says: /select 1
+2018-11-30 20:54:45 INFO  MessageQueue:31 - New message from client side: User 1 has connected.
+2018-11-30 20:54:45 ERROR MessageHandler:32 - Connection with User 1 is closed.
+
+2018-11-30 20:54:45 ERROR MessageQueue:37 - User disconnected.
+java.net.SocketException: Socket closed
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:118)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+	at java.io.DataOutputStream.write(DataOutputStream.java:107)
+	at java.io.DataOutputStream.writeUTF(DataOutputStream.java:401)
+	at java.io.DataOutputStream.writeUTF(DataOutputStream.java:323)
+	at server.MessageQueue.lambda$startSending$0(MessageQueue.java:34)
+	at java.lang.Thread.run(Thread.java:748)
+2018-11-30 20:54:45 ERROR MessageReceiver:28 - Connection is closed.
+java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.net.SocketInputStream.read(SocketInputStream.java:224)
+	at java.io.DataInputStream.readUnsignedShort(DataInputStream.java:337)
+	at java.io.DataInputStream.readUTF(DataInputStream.java:589)
+	at java.io.DataInputStream.readUTF(DataInputStream.java:564)
+	at client.MessageReceiver.lambda$startReceiving$0(MessageReceiver.java:25)
+	at java.lang.Thread.run(Thread.java:748)
+2018-11-30 20:55:30 INFO  ConnectionHandler:28 - Accepted connection from Socket[addr=/127.0.0.1,port=55882,localport=9000]
+2018-11-30 20:55:30 INFO  Server:39 - -------- New connection --------
+2018-11-30 20:55:30 INFO  MessageQueue:31 - New message from client side: Commands:
+/select <chatID>: select one of the chats
+/chats: get list of possible chats
+/custom: get list of custom commands
+/disconnect: disconnect
+2018-11-30 20:55:30 INFO  MessageHandler:22 - Message handler started getting messages from User 1
+
+2018-11-30 20:55:34 INFO  MessageListener:107 - User 1 says: /select 1
+2018-11-30 20:55:34 INFO  MessageQueue:31 - New message from client side: User 1 has connected.
+2018-11-30 20:55:42 INFO  ConnectionHandler:28 - Accepted connection from Socket[addr=/127.0.0.1,port=55887,localport=9000]
+2018-11-30 20:55:42 INFO  Server:39 - -------- New connection --------
+2018-11-30 20:55:42 INFO  MessageQueue:31 - New message from client side: Commands:
+/select <chatID>: select one of the chats
+/chats: get list of possible chats
+/custom: get list of custom commands
+/disconnect: disconnect
+2018-11-30 20:55:42 INFO  MessageHandler:22 - Message handler started getting messages from User 2
+
+2018-11-30 20:55:44 ERROR MessageReceiver:28 - Connection is closed.
+java.io.EOFException
+	at java.io.DataInputStream.readUnsignedShort(DataInputStream.java:340)
+	at java.io.DataInputStream.readUTF(DataInputStream.java:589)
+	at java.io.DataInputStream.readUTF(DataInputStream.java:564)
+	at client.MessageReceiver.lambda$startReceiving$0(MessageReceiver.java:25)
+	at java.lang.Thread.run(Thread.java:748)
+2018-11-30 20:55:44 ERROR MessageReceiver:28 - Connection is closed.
+java.io.EOFException
+	at java.io.DataInputStream.readUnsignedShort(DataInputStream.java:340)
+	at java.io.DataInputStream.readUTF(DataInputStream.java:589)
+	at java.io.DataInputStream.readUTF(DataInputStream.java:564)
+	at client.MessageReceiver.lambda$startReceiving$0(MessageReceiver.java:25)
+	at java.lang.Thread.run(Thread.java:748)
+2018-11-30 21:07:33 INFO  ConnectionHandler:28 - Accepted connection from Socket[addr=/127.0.0.1,port=55953,localport=9000]
+2018-11-30 21:07:33 INFO  Server:39 - -------- New connection --------
+2018-11-30 21:07:33 INFO  MessageQueue:31 - New message from client side: Commands:
+/select <chatID>: select one of the chats
+/chats: get list of possible chats
+/custom: get list of custom commands
+/disconnect: disconnect
+2018-11-30 21:07:33 INFO  MessageHandler:22 - Message handler started getting messages from User 1
+
+2018-11-30 21:07:39 ERROR MessageSender:37 - java.net.SocketException: Socket closed
+2018-11-30 21:07:39 ERROR MessageHandler:32 - Connection with User 1 is closed.
+
+2018-11-30 21:07:39 ERROR MessageReceiver:28 - Connection is closed.
+java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.net.SocketInputStream.read(SocketInputStream.java:224)
+	at java.io.DataInputStream.readUnsignedShort(DataInputStream.java:337)
+	at java.io.DataInputStream.readUTF(DataInputStream.java:589)
+	at java.io.DataInputStream.readUTF(DataInputStream.java:564)
+	at client.MessageReceiver.lambda$startReceiving$0(MessageReceiver.java:25)
+	at java.lang.Thread.run(Thread.java:748)
+2018-11-30 21:07:47 INFO  ConnectionHandler:28 - Accepted connection from Socket[addr=/127.0.0.1,port=55957,localport=9000]
+2018-11-30 21:07:47 INFO  Server:39 - -------- New connection --------
+2018-11-30 21:07:47 INFO  MessageQueue:31 - New message from client side: Commands:
+/select <chatID>: select one of the chats
+/chats: get list of possible chats
+/custom: get list of custom commands
+/disconnect: disconnect
+2018-11-30 21:07:47 INFO  MessageHandler:22 - Message handler started getting messages from User 2
+
+2018-11-30 21:07:51 ERROR MessageReceiver:28 - Connection is closed.
+java.io.EOFException
+	at java.io.DataInputStream.readUnsignedShort(DataInputStream.java:340)
+	at java.io.DataInputStream.readUTF(DataInputStream.java:589)
+	at java.io.DataInputStream.readUTF(DataInputStream.java:564)
+	at client.MessageReceiver.lambda$startReceiving$0(MessageReceiver.java:25)
+	at java.lang.Thread.run(Thread.java:748)
+2018-12-01 12:10:38 INFO  ConnectionHandler:28 - Accepted connection from Socket[addr=/127.0.0.1,port=56719,localport=9000]
+2018-12-01 12:10:38 INFO  Server:39 - -------- New connection --------
+2018-12-01 12:10:38 INFO  MessageQueue:31 - New message from client side: Commands:
+/select <chatID>: select one of the chats
+/chats: get list of possible chats
+/custom: get list of custom commands
+/disconnect: disconnect
+2018-12-01 12:10:38 INFO  MessageHandler:22 - Message handler started getting messages from User 1
+
+2018-12-01 12:10:47 INFO  MessageListener:107 - User 1 says: /select 1
+2018-12-01 12:10:47 INFO  MessageQueue:31 - New message from client side: User 1 has connected.
+2018-12-01 12:10:55 INFO  ConnectionHandler:28 - Accepted connection from Socket[addr=/127.0.0.1,port=56724,localport=9000]
+2018-12-01 12:10:55 INFO  Server:39 - -------- New connection --------
+2018-12-01 12:10:55 INFO  MessageQueue:31 - New message from client side: Commands:
+/select <chatID>: select one of the chats
+/chats: get list of possible chats
+/custom: get list of custom commands
+/disconnect: disconnect
+2018-12-01 12:10:55 INFO  MessageHandler:22 - Message handler started getting messages from User 2
+
+2018-12-01 12:10:58 INFO  MessageListener:107 - User 2 says: /select 1
+2018-12-01 12:10:58 INFO  MessageQueue:31 - New message from client side: User 2 has connected.
+2018-12-01 12:10:58 INFO  MessageQueue:31 - New message from client side: User 2 has connected.
+2018-12-01 12:11:01 INFO  MessageListener:107 - User 2 says: hey
+2018-12-01 12:11:01 INFO  MessageQueue:31 - New message from client side: User 2: hey
+2018-12-01 12:11:04 INFO  MessageListener:107 - User 1 says: hey
+2018-12-01 12:11:04 INFO  MessageQueue:31 - New message from client side: User 1: hey
+2018-12-01 12:11:07 ERROR MessageHandler:32 - Connection with User 1 is closed.
+
+2018-12-01 12:11:07 ERROR MessageSender:37 - java.net.SocketException: Socket closed
+2018-12-01 12:11:07 ERROR MessageReceiver:28 - Connection is closed.
+java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.net.SocketInputStream.read(SocketInputStream.java:224)
+	at java.io.DataInputStream.readUnsignedShort(DataInputStream.java:337)
+	at java.io.DataInputStream.readUTF(DataInputStream.java:589)
+	at java.io.DataInputStream.readUTF(DataInputStream.java:564)
+	at client.MessageReceiver.lambda$startReceiving$0(MessageReceiver.java:25)
+	at java.lang.Thread.run(Thread.java:748)
+2018-12-01 12:11:26 ERROR MessageReceiver:28 - Connection is closed.
+java.io.EOFException
+	at java.io.DataInputStream.readUnsignedShort(DataInputStream.java:340)
+	at java.io.DataInputStream.readUTF(DataInputStream.java:589)
+	at java.io.DataInputStream.readUTF(DataInputStream.java:564)
+	at client.MessageReceiver.lambda$startReceiving$0(MessageReceiver.java:25)
+	at java.lang.Thread.run(Thread.java:748)

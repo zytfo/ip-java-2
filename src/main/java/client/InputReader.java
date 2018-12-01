@@ -13,7 +13,6 @@ public class InputReader {
     private final InputStream inputStream;
     private final MessageSender messageQueue;
     private final Socket socket;
-//    private volatile boolean work = true;
 
     InputReader(InputStream inputStream, MessageSender messageQueue, Socket socket) {
         this.inputStream = inputStream;
@@ -26,25 +25,26 @@ public class InputReader {
         Runnable runnable = () -> {
             Scanner scanner = new Scanner(inputStream);
             String input;
-            input = scanner.nextLine();
-            if (input.equals("/disconnect")) {
-                try {
-                    inputStream.close();
-                    socket.close();
-                } catch (IOException e) {
-                    logger.error("An error in reader has occurred.", e);
+            while (ClientMain.work) {
+                input = scanner.nextLine();
+                if (input.equals("/disconnect")) {
+                    try {
+                        inputStream.close();
+                        socket.close();
+                    } catch (IOException e) {
+                        logger.error("An error in reader has occurred.", e);
+                    }
+                    messageQueue.clear();
                 }
-                messageQueue.clear();
-                System.exit(0);
+                messageQueue.sendMessage(input);
             }
-            messageQueue.sendMessage(input);
         };
         Thread thread = new Thread(runnable);
         thread.start();
     }
-//
-//    public void stop() {
-//        work = false;
-//        messageQueue.stop();
-//    }
+
+    private void stop() {
+        ClientMain.work = false;
+        messageQueue.stop();
+    }
 }

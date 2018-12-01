@@ -10,7 +10,6 @@ public class MessageSender implements Sender {
 
     private final static Logger logger = Logger.getLogger(MessageSender.class);
     private final LinkedBlockingQueue<String> queue = new LinkedBlockingQueue<>();
-    private volatile boolean work;
     private final DataOutputStream outputStream;
 
     MessageSender(DataOutputStream outputStream) {
@@ -26,10 +25,9 @@ public class MessageSender implements Sender {
 
     @Override
     public void start() {
-        work = true;
         Runnable runnable = () -> {
             String message;
-            while (work) {
+            while (ClientMain.work) {
                 try {
                     message = queue.take();
                     try {
@@ -37,6 +35,7 @@ public class MessageSender implements Sender {
                         outputStream.flush();
                     } catch (IOException e) {
                         logger.error(e);
+                        clear();
                     }
                 } catch (InterruptedException e) {
                     logger.error(e);
@@ -49,7 +48,7 @@ public class MessageSender implements Sender {
 
     @Override
     public void stop() {
-        work = false;
+        ClientMain.work = false;
         queue.clear();
     }
 

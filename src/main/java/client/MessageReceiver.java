@@ -11,7 +11,6 @@ public class MessageReceiver implements Receiver {
     private final static Logger logger = Logger.getLogger(MessageReceiver.class);
     private MessageListener MessageListener;
     private final DataInputStream inputStream;
-    private volatile boolean work;
 
     MessageReceiver(DataInputStream inputStream) {
         this.inputStream = inputStream;
@@ -19,16 +18,16 @@ public class MessageReceiver implements Receiver {
 
     @Override
     public void startReceiving() {
-        work = true;
         Runnable runnable = () -> {
             String message;
-            while (work) {
+            while (ClientMain.work) {
                 try {
                     message = inputStream.readUTF();
                     MessageListener.onNewMessage(message);
                 } catch (IOException e) {
                     logger.error("Connection is closed.", e);
                     stopReceiving();
+                    System.exit(0);
                 }
             }
         };
@@ -43,7 +42,7 @@ public class MessageReceiver implements Receiver {
 
     @Override
     public void stopReceiving() {
-        work = false;
+        ClientMain.work = false;
         try {
             inputStream.close();
         } catch (IOException e) {
