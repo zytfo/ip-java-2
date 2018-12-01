@@ -1,7 +1,7 @@
 package client;
 
 public class Client {
-
+    static volatile boolean work = true;
     private final MessageReceiver messageReceiver;
     private final InputReader inputReader;
 
@@ -12,7 +12,7 @@ public class Client {
 
     public void init() {
         messageReceiver.setOnNewMessageListener(System.out::println);
-        inputReader.startReading();
+        inputReader.startReader();
         messageReceiver.startReceiving();
     }
 }

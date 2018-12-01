@@ -9,8 +9,8 @@ import java.io.IOException;
 public class MessageReceiver implements Receiver {
 
     private final static Logger logger = Logger.getLogger(MessageReceiver.class);
-    private MessageListener MessageListener;
     private final DataInputStream inputStream;
+    private MessageListener MessageListener;
 
     MessageReceiver(DataInputStream inputStream) {
         this.inputStream = inputStream;
@@ -18,21 +18,8 @@ public class MessageReceiver implements Receiver {
 
     @Override
     public void startReceiving() {
-        Runnable runnable = () -> {
-            String message;
-            while (ClientMain.work) {
-                try {
-                    message = inputStream.readUTF();
-                    MessageListener.onNewMessage(message);
-                } catch (IOException e) {
-                    logger.error("Connection is closed.", e);
-                    stopReceiving();
-                    System.exit(0);
-                }
-            }
-        };
-        Thread thread = new Thread(runnable);
-        thread.start();
+        MessageReceiverWorker messageReceiverWorker = new MessageReceiverWorker();
+        messageReceiverWorker.start();
     }
 
     @Override
@@ -42,7 +29,7 @@ public class MessageReceiver implements Receiver {
 
     @Override
     public void stopReceiving() {
-        ClientMain.work = false;
+        Client.work = false;
         try {
             inputStream.close();
         } catch (IOException e) {
@@ -50,4 +37,19 @@ public class MessageReceiver implements Receiver {
         }
     }
 
+    public class MessageReceiverWorker extends Thread {
+        @Override
+        public void run() {
+            String message;
+            while (Client.work) {
+                try {
+                    message = inputStream.readUTF();
+                    MessageListener.onNewMessage(message);
+                } catch (IOException e) {
+                    logger.error("Connection is closed. Press any key to exit.", e);
+                    stopReceiving();
+                }
+            }
+        }
+    }
 }

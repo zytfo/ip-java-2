@@ -3,9 +3,9 @@ package client;
 public interface Sender {
     void sendMessage(String message);
 
-    void start();
+    void startSending();
 
-    void stop();
+    void stopSending();
 
     void clear();
 }

@@ -13,6 +13,12 @@ import java.util.concurrent.LinkedBlockingQueue;
 import static org.mockito.Mockito.*;
 
 public class MessageSenderTest {
+    @Mock
+    Logger logger;
+    @Mock
+    LinkedBlockingQueue<String> queue;
+    @Mock
+    DataOutputStream outputStream;
     @InjectMocks
     MessageSender messageSender;
 
@@ -27,13 +33,13 @@ public class MessageSenderTest {
     }
 
     @Test
-    public void testStart() throws Exception {
-        messageSender.start();
+    public void testStartSending() throws Exception {
+        messageSender.startSending();
     }
 
     @Test
-    public void testStop() throws Exception {
-        messageSender.stop();
+    public void testStopSending() throws Exception {
+        messageSender.stopSending();
     }
 
     @Test

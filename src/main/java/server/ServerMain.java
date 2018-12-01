@@ -7,6 +7,7 @@ import java.net.ServerSocket;
 
 public class ServerMain {
     private final static Logger logger = Logger.getLogger(Server.class);
+
     public static void main(String[] args) {
         MessageQueue messageQueue = new MessageQueue();
         MessageHandler messageHandler = new MessageHandler();

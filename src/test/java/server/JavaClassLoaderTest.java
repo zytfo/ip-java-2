@@ -1,5 +1,6 @@
 package server;
 
+import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,6 +16,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import static org.mockito.Mockito.*;
 
 public class JavaClassLoaderTest {
+    @Mock
+    Logger logger;
     @Mock
     ClassLoader parent;
     @Mock
@@ -34,12 +37,6 @@ public class JavaClassLoaderTest {
     @Mock
     Vector<String> loadedLibraryNames;
     @Mock
-    Vector<ClassLoader> systemNativeLibraries;
-    @Mock
-    Vector<ClassLoader> nativeLibraries;
-    @Mock
-    Stack<ClassLoader> nativeLibraryContext;
-    @Mock
     Object assertionLock;
     @Mock
     Map<String, Boolean> packageAssertionStatus;
@@ -54,14 +51,14 @@ public class JavaClassLoaderTest {
     }
 
     @Test
-    public void testCall() throws Exception {
-        Object result = javaClassLoader.call();
-        Assert.assertEquals(null, result);
-    }
-
-    @Test
     public void testGetClasses() throws Exception {
         ArrayList<Class> result = JavaClassLoader.getClasses(new JavaClassLoader(new String[]{"arguments"}), "pack");
         Assert.assertEquals(new ArrayList<Class>(Arrays.asList(Class.forName("server.JavaClassLoader"))), result);
+    }
+
+    @Test
+    public void testCall() throws Exception {
+        Object result = javaClassLoader.call();
+        Assert.assertEquals("replaceMeWithExpectedResult", result);
     }
 }

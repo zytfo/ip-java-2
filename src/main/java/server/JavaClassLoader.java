@@ -14,20 +14,11 @@ import java.util.Arrays;
 import java.util.concurrent.Callable;
 
 public class JavaClassLoader extends ClassLoader implements Callable<Object> {
-    private String[] arguments;
     private final static Logger logger = Logger.getLogger(Server.class);
+    private String[] arguments;
 
     JavaClassLoader(String[] arguments) {
         this.arguments = arguments;
-    }
-
-    public Object call() {
-        try {
-            return invokeClassMethod("plugins." + arguments[0].substring(1), "call", Arrays.copyOfRange(arguments, 1, arguments.length));
-        } catch (Exception e) {
-            logger.error(e);
-        }
-        return null;
     }
 
     public static ArrayList<Class> getClasses(ClassLoader cl, String pack) {
@@ -35,8 +26,8 @@ public class JavaClassLoader extends ClassLoader implements Callable<Object> {
         ArrayList<Class> classes = new ArrayList<>();
         URL upackage = cl.getResource(pack);
         try {
-        BufferedReader dis = new BufferedReader(new InputStreamReader((InputStream) upackage.getContent()));
-        String line;
+            BufferedReader dis = new BufferedReader(new InputStreamReader((InputStream) upackage.getContent()));
+            String line;
             while ((line = dis.readLine()) != null) {
                 if (line.endsWith(".class")) {
                     classes.add(Class.forName(dottedPackage + "." + line.substring(0, line.lastIndexOf('.'))));
@@ -48,6 +39,15 @@ public class JavaClassLoader extends ClassLoader implements Callable<Object> {
             logger.error(e);
         }
         return classes;
+    }
+
+    public Object call() {
+        try {
+            return invokeClassMethod("plugins." + arguments[0].substring(1), "call", Arrays.copyOfRange(arguments, 1, arguments.length));
+        } catch (Exception e) {
+            logger.error(e);
+        }
+        return null;
     }
 
     private boolean isInteger(String string) {
@@ -74,7 +74,7 @@ public class JavaClassLoader extends ClassLoader implements Callable<Object> {
                     myClassObject = constructor.newInstance(Integer.parseInt(arguments[0]), arguments[1]);
                 }
             } else {
-                System.exit(-1);
+                logger.error("Plugin not found.");
             }
             Method method = loadedMyClass.getMethod(methodName);
             return method.invoke(myClassObject);

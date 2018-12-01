@@ -24,10 +24,32 @@ public class MessageSender implements Sender {
     }
 
     @Override
-    public void start() {
-        Runnable runnable = () -> {
+    public void startSending() {
+        MessageSenderWorker messageSenderWorker = new MessageSenderWorker();
+        messageSenderWorker.start();
+    }
+
+    @Override
+    public void stopSending() {
+        Client.work = false;
+        queue.clear();
+    }
+
+    @Override
+    public void clear() {
+        stopSending();
+        try {
+            outputStream.close();
+        } catch (IOException e) {
+            logger.error("Some problem with closing stream has occurred.", e);
+        }
+    }
+
+    public class MessageSenderWorker extends Thread {
+        @Override
+        public void run() {
             String message;
-            while (ClientMain.work) {
+            while (Client.work) {
                 try {
                     message = queue.take();
                     try {
@@ -41,25 +63,6 @@ public class MessageSender implements Sender {
                     logger.error(e);
                 }
             }
-        };
-        Thread thread = new Thread(runnable);
-        thread.start();
-    }
-
-    @Override
-    public void stop() {
-        ClientMain.work = false;
-        queue.clear();
-    }
-
-    @Override
-    public void clear() {
-        stop();
-        try {
-            outputStream.close();
-        } catch (IOException e) {
-            logger.error("Some problem with closing stream has occurred.", e);
         }
     }
-
 }

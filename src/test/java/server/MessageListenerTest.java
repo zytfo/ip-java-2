@@ -9,7 +9,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import java.net.Socket;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.ExecutorService;
@@ -20,13 +19,13 @@ public class MessageListenerTest {
     @Mock
     Logger logger;
     @Mock
+    ExecutorService pool;
+    @Mock
     MessageQueue messageQueue;
     @Mock
     HashMap<Integer, Chat> chats;
     @Mock
     ArrayList<String> customCommands;
-    @Mock
-    ExecutorService pool;
     @Mock
     ArrayList<Class> classes;
     @InjectMocks
@@ -39,6 +38,6 @@ public class MessageListenerTest {
 
     @Test
     public void testSendNewMessage() throws Exception {
-        messageListener.sendNewMessage(new User(new Socket()), "text");
+        messageListener.sendNewMessage(new User(null), "text");
     }
 }

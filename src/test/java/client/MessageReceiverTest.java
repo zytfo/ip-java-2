@@ -15,9 +15,9 @@ public class MessageReceiverTest {
     @Mock
     Logger logger;
     @Mock
-    client.MessageListener MessageListener;
-    @Mock
     DataInputStream inputStream;
+    @Mock
+    client.MessageListener MessageListener;
     @InjectMocks
     MessageReceiver messageReceiver;
 

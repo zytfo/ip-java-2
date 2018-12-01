@@ -1,6 +1,5 @@
 package client;
 
-import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -10,8 +9,6 @@ import org.mockito.MockitoAnnotations;
 import static org.mockito.Mockito.*;
 
 public class ClientTest {
-    @Mock
-    Logger logger;
     @Mock
     MessageReceiver messageReceiver;
     @Mock
@@ -25,7 +22,7 @@ public class ClientTest {
     }
 
     @Test
-    public void testMain() throws Exception {
-//        Client.main(new String[]{"args"});
+    public void testInit() throws Exception {
+        client.init();
     }
 }

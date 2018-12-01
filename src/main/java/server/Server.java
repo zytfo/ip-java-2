@@ -11,11 +11,10 @@ import java.util.HashMap;
 public class Server {
 
     private final static Logger logger = Logger.getLogger(Server.class);
-    private HashMap<Integer, Chat> chats = new HashMap<>();
     private final MessageQueue messageQueue;
     private final ConnectionHandler connectionHandler;
     private final MessageHandler messageHandler;
-
+    private HashMap<Integer, Chat> chats = new HashMap<>();
     private volatile int userCounter = 0;
     private volatile int chatCounter = 0;
 

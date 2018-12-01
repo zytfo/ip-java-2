@@ -8,7 +8,6 @@ import java.net.Socket;
 import java.util.Scanner;
 
 public class InputReader {
-
     private final static Logger logger = Logger.getLogger(InputReader.class);
     private final InputStream inputStream;
     private final MessageSender messageQueue;
@@ -20,14 +19,21 @@ public class InputReader {
         this.socket = socket;
     }
 
-    public void startReading() {
-        messageQueue.start();
-        Runnable runnable = () -> {
+    public void startReader() {
+        messageQueue.startSending();
+        InputReaderWorker inputReaderWorker = new InputReaderWorker();
+        inputReaderWorker.start();
+    }
+
+    public class InputReaderWorker extends Thread {
+        @Override
+        public void run() {
             Scanner scanner = new Scanner(inputStream);
             String input;
-            while (ClientMain.work) {
+            while (Client.work) {
                 input = scanner.nextLine();
                 if (input.equals("/disconnect")) {
+                    stopReader();
                     try {
                         inputStream.close();
                         socket.close();
@@ -38,13 +44,11 @@ public class InputReader {
                 }
                 messageQueue.sendMessage(input);
             }
-        };
-        Thread thread = new Thread(runnable);
-        thread.start();
-    }
+        }
 
-    private void stop() {
-        ClientMain.work = false;
-        messageQueue.stop();
+        private void stopReader() {
+            Client.work = false;
+            messageQueue.stopSending();
+        }
     }
 }

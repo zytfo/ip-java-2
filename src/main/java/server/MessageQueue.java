@@ -22,32 +22,8 @@ public class MessageQueue {
     }
 
     public void startSending() {
-        work = true;
-        Runnable runnable = () -> {
-            Message message;
-            while (work) {
-                try {
-                    message = queue.take();
-                    logger.info("New message from client side: " + message.getText());
-                    try {
-                        outputStream = message.getDataOutputStream();
-                        outputStream.writeUTF(message.getText());
-                        outputStream.flush();
-                    } catch (SocketException e) {
-                        logger.error("User disconnected.", e);
-                    } catch (IOException e) {
-                        logger.error("Some problem with stream output has occurred with message: " + message.getText(), e);
-                    }
-                } catch (InterruptedException e) {
-                    logger.error("Message queue was interrupted...", e);
-                    startSending();
-                    work = false;
-                    return;
-                }
-            }
-        };
-        Thread thread = new Thread(runnable);
-        thread.start();
+        MessageQueueWorker messageQueueWorker = new MessageQueueWorker();
+        messageQueueWorker.start();
     }
 
     public void stopSending() {
@@ -62,6 +38,34 @@ public class MessageQueue {
         } catch (IOException e) {
             System.out.println("Problems with closing output stream.");
             e.printStackTrace();
+        }
+    }
+
+    public class MessageQueueWorker extends Thread {
+        @Override
+        public void run() {
+            Message message;
+            while (work) {
+                try {
+                    message = queue.take();
+                    logger.info("New message from client side: " + message.getText());
+                    try {
+                        outputStream = message.getDataOutputStream();
+                        outputStream.writeUTF(message.getText());
+                        outputStream.flush();
+                    } catch (SocketException e) {
+                        logger.error("User disconnected.", e);
+                        stopSending();
+                    } catch (IOException e) {
+                        logger.error("Some problem with stream output has occurred with message: " + message.getText(), e);
+                        stopSending();
+                    }
+                } catch (InterruptedException e) {
+                    logger.error("Message queue was interrupted...", e);
+                    stopSending();
+                    return;
+                }
+            }
         }
     }
 }

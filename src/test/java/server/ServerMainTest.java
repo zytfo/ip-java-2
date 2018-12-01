@@ -7,19 +7,13 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import java.net.ServerSocket;
-
 import static org.mockito.Mockito.*;
 
-public class ConnectionHandlerTest {
+public class ServerMainTest {
     @Mock
     Logger logger;
-    @Mock
-    ServerSocket serverSocket;
-    @Mock
-    ConnectionListener listener;
     @InjectMocks
-    ConnectionHandler connectionHandler;
+    ServerMain serverMain;
 
     @Before
     public void setUp() {
@@ -27,7 +21,7 @@ public class ConnectionHandlerTest {
     }
 
     @Test
-    public void testStartAccepting() throws Exception {
-        connectionHandler.startAccepting();
+    public void testMain() throws Exception {
+        ServerMain.main(new String[]{"args"});
     }
 }

@@ -39,12 +39,12 @@ public class UserTest {
     @Test
     public void testGetDataInputStream() throws Exception {
         DataInputStream result = user.getDataInputStream();
-        Assert.assertEquals(inputStream, result);
+        Assert.assertEquals(null, result);
     }
 
     @Test
     public void testGetDataOutputStream() throws Exception {
         DataOutputStream result = user.getDataOutputStream();
-        Assert.assertEquals(outputStream, result);
+        Assert.assertEquals(null, result);
     }
 }

@@ -8,6 +8,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import java.io.InputStream;
+import java.net.Socket;
 
 import static org.mockito.Mockito.*;
 
@@ -18,6 +19,8 @@ public class InputReaderTest {
     InputStream inputStream;
     @Mock
     MessageSender messageQueue;
+    @Mock
+    Socket socket;
     @InjectMocks
     InputReader inputReader;
 
@@ -27,12 +30,7 @@ public class InputReaderTest {
     }
 
     @Test
-    public void testStartReading() throws Exception {
-        inputReader.startReading();
-    }
-
-    @Test
-    public void testStop() throws Exception {
-//        inputReader.stop();
+    public void testStartReader() throws Exception {
+        inputReader.startReader();
     }
 }

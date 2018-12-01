@@ -16,13 +16,13 @@ public class ServerTest {
     @Mock
     Logger logger;
     @Mock
-    HashMap<Integer, Chat> chats;
-    @Mock
     MessageQueue messageQueue;
     @Mock
     ConnectionHandler connectionHandler;
     @Mock
     MessageHandler messageHandler;
+    @Mock
+    HashMap<Integer, Chat> chats;
     @InjectMocks
     Server server;
 
@@ -32,7 +32,12 @@ public class ServerTest {
     }
 
     @Test
-    public void testMain() throws Exception {
-//        Server.main(new String[]{"args"});
+    public void testAddChat() throws Exception {
+        server.addChat();
+    }
+
+    @Test
+    public void testInit() throws Exception {
+        server.init();
     }
 }

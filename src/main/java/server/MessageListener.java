@@ -15,10 +15,10 @@ import java.util.concurrent.Future;
 
 public class MessageListener {
     private final static Logger logger = Logger.getLogger(MessageListener.class);
+    private final ExecutorService pool = Executors.newFixedThreadPool(1);
     private MessageQueue messageQueue;
     private HashMap<Integer, Chat> chats;
     private ArrayList<String> customCommands = new ArrayList<>();
-    private final ExecutorService pool = Executors.newFixedThreadPool(1);
     private ArrayList<Class> classes;
 
     MessageListener(MessageQueue messageQueue, HashMap<Integer, Chat> chats) {
@@ -56,7 +56,6 @@ public class MessageListener {
         } else if (text.equals("/help")) {
             messageQueue.sendMessage(new Message(help, user.getDataOutputStream()));
         } else if (text.equals("/custom")) {
-            updateCustomCommands();
             String message = "External plugins:\n";
             for (int i = 0; i < customCommands.size(); i++)
                 message += customCommands.get(i) + "\n";
@@ -94,8 +93,12 @@ public class MessageListener {
         if (customCommands.contains(arguments[0])) {
             Future<Object> result = pool.submit(new JavaClassLoader(arguments));
             try {
-                String finish = result.get().toString();
-                messageQueue.sendMessage(new Message(finish, user.getDataOutputStream()));
+                if (result.get() != null) {
+                    String finish = result.get().toString();
+                    messageQueue.sendMessage(new Message(finish, user.getDataOutputStream()));
+                } else {
+                    messageQueue.sendMessage(new Message("Command not found", user.getDataOutputStream()));
+                }
             } catch (InterruptedException | ExecutionException ex) {
                 logger.error(ex);
             }

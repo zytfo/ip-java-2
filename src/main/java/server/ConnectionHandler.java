@@ -8,9 +8,9 @@ import java.net.Socket;
 
 public class ConnectionHandler {
     private final static Logger logger = Logger.getLogger(ConnectionHandler.class);
-    private ConnectionListener listener;
     private final ServerSocket serverSocket;
-    private volatile boolean accept = true;
+    private ConnectionListener listener;
+    private volatile boolean work = true;
 
     ConnectionHandler(ServerSocket serverSocket) {
         this.serverSocket = serverSocket;
@@ -20,23 +20,37 @@ public class ConnectionHandler {
         if (listener == null) {
             return;
         }
+        ConnectionHandlerWorker connectionHandlerWorker = new ConnectionHandlerWorker();
+        connectionHandlerWorker.start();
+    }
 
-        Runnable runnable = () -> {
-            while (accept) {
+    public void setConnectionListener(ConnectionListener listener) {
+        this.listener = listener;
+    }
+
+    public class ConnectionHandlerWorker extends Thread {
+        @Override
+        public void run() {
+            while (work) {
                 try {
                     Socket socket = serverSocket.accept();
                     logger.info("Accepted connection from " + socket);
                     listener.addConnection(socket);
                 } catch (IOException e) {
                     logger.error(e);
+                    stopAcepting();
                 }
             }
-        };
-        Thread thread = new Thread(runnable);
-        thread.start();
+        }
+
+        private void stopAcepting() {
+            work = false;
+            try {
+                serverSocket.close();
+            } catch (IOException e) {
+                logger.error(e);
+            }
+        }
     }
 
-    public void setConnectionListener(ConnectionListener listener) {
-        this.listener = listener;
-    }
 }
